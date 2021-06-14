@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const helmet = require('helmet');
 const session = require('express-session');
-const Store = require('connect-session-knex')(session)
+const Store = require('connect-session-knex')(session);
 
 const authRouter = require('./auth/auth-router');
 const usersRouter = require('./users/users-router.js');
@@ -19,7 +19,10 @@ server.use(session({
     httpOnly: false, // if true, cookie not in document
   },
   resave: false, // required by some session stores
-  saveUninitialized: true // session not saved automatically
+  saveUninitialized: true, // session not saved automatically
+  store: new Store({
+
+  })
 }));
 server.use(helmet());
 server.use(express.json());
