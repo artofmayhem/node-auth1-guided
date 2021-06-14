@@ -37,13 +37,11 @@ router.post('/login', async (req, res, next) => {
 router.get('/logout', async (req, res, next) => {
   if (req.session.user) {
     req.session.destroy(err => {
-      if (err) res.json({ message: 'you cannot leave'})
-      else res.json({ message: 'goodbye'})
+      if (err) res.json({ message: 'you cannot leave' })
+      else res.json({ message: 'goodbye' })
     })
   } else {
-    res.json({
-      message: 'excuse me, do I know you?'
-    })
+    res.json({ message: 'excuse me, do I know you?' })
   }
 })
 router.use((err, req, res, next) => { // eslint-disable-line
