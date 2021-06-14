@@ -15,8 +15,9 @@ server.use(session({
   cookie: {
     maxAge: 1000 * 60,
     secure: false, // if true, only works over TLS/https
-    httpOnly: false, 
-  }
+    httpOnly: false, // if true, cookie not in document
+  },
+  resave: false, // required by some session stores
 }));
 server.use(helmet());
 server.use(express.json());
