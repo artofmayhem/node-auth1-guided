@@ -11,7 +11,7 @@ const server = express();
 server.use(express.static(path.join(__dirname, '../client')));
 server.use(session({
   name: 'foo',
-  
+  secret: 'keep it secret' // .env file
 }));
 server.use(helmet());
 server.use(express.json());
