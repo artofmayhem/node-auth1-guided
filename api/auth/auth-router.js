@@ -18,7 +18,11 @@ router.post('/register', async (req, res, next) => {
   }
 })
 router.post('/login', async (req, res, next) => {
-  res.json('endpoint login wired!')
+  try {
+    const { username, password } = req.body
+  } catch (err) {
+    next(err)
+  }
 })
 router.get('/logout', async (req, res, next) => {
   res.json('endpoint logout wired!')
