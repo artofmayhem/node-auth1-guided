@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const bcrypt = require('bcryptjs')
+const User = require('../users/users-model')
 
 router.post('/register', async (req, res, next) => {
   try {
@@ -8,7 +9,8 @@ router.post('/register', async (req, res, next) => {
       password, // plain text
       8, // number of rounds of hashing 2 ^ 8
     )
-    const newUser = { }
+    const newUser = { username, password: hash }
+    User.
   } catch (err) {
     next(err)
   }
