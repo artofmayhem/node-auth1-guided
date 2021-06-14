@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { restricted } = require('../auth/auth-middleware');
 const Users = require("./users-model.js");
 
-router.use(res)
+// router.use(restricted)
 
 router.get("/", restricted, (req, res, next) => {
   Users.find()
