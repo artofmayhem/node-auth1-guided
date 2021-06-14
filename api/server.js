@@ -10,6 +10,7 @@ const server = express();
 
 server.use(express.static(path.join(__dirname, '../client')));
 server.use(session({
+  name: 'foo',
   
 }));
 server.use(helmet());
