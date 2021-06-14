@@ -5,10 +5,10 @@ router.post('/register', async (req, res, next) => {
   try {
     const { username, password } = req.body
     const hash = bcrypt.hashSync(
-      password,
+      password, // plain text
       8, // number of rounds of hashing 2 ^ 8
     )
-    
+
   } catch (err) {
     next(err)
   }
