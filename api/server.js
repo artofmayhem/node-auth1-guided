@@ -14,7 +14,8 @@ server.use(session({
   secret: 'keep it secret', // .env file
   cookie: {
     maxAge: 1000 * 60,
-    secure: false, // if true, only works over TLS/https 
+    secure: false, // if true, only works over TLS/https
+    httpOnly: false, 
   }
 }));
 server.use(helmet());
