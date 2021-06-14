@@ -9,6 +9,9 @@ const usersRouter = require('./users/users-router.js');
 const server = express();
 
 server.use(express.static(path.join(__dirname, '../client')));
+server.use(session({
+  
+}));
 server.use(helmet());
 server.use(express.json());
 
