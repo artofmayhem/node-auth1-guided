@@ -1,6 +1,7 @@
 function restrict(req, res, next) {
-  console.log('restrict middleware wired!')
-  next()
+  if (req.session.user) {
+    next()
+  }
 }
 
 module.exports = {
