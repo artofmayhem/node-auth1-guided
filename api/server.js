@@ -14,7 +14,7 @@ server.use(session({
   name: 'foo',
   secret: 'keep it secret', // .env file
   cookie: {
-    maxAge: 1000 * 60,
+    maxAge: 1000 * 60 * 60,
     secure: false, // if true, only works over TLS/https
     httpOnly: false, // if true, cookie not in document
   },
@@ -25,7 +25,7 @@ server.use(session({
     tableName: 'sessions',
     sidfieldname: 'sid',
     createtable: true,
-    
+    clearInterval: 1000 * 60 * 60,
   })
 }));
 server.use(helmet());
