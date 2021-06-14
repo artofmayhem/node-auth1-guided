@@ -8,8 +8,7 @@ router.post('/register', async (req, res, next) => {
       password,
       8, // number of rounds of hashing 2 ^ 8
     )
-    console.log(hash)
-    res.json(hash)
+    
   } catch (err) {
     next(err)
   }
