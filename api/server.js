@@ -21,7 +21,8 @@ server.use(session({
   resave: false, // required by some session stores
   saveUninitialized: true, // session not saved automatically
   store: new Store({
-
+    knex: require('../database/db-config'),
+    tableName: 'sessions',
   })
 }));
 server.use(helmet());
