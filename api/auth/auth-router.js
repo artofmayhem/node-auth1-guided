@@ -21,6 +21,7 @@ router.post('/login', async (req, res, next) => {
   try {
     const { username, password } = req.body
     // does username correspont to an actual user?
+    const userDb = await User.findBy({  })
   } catch (err) {
     next(err)
   }
