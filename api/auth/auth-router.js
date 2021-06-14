@@ -24,7 +24,8 @@ router.post('/login', async (req, res, next) => {
     // does username correspont to an actual user?
     if (user && bcrypt.compareSync(password, user.password)) {
       req.session.user = user
-      // 
+      // a cookie is set on client
+      // a session is stored for that user
       res.json(`welcome back, ${user.username}!`)
     } else {
       next({ status: 401, message: 'invalid credentials' })
