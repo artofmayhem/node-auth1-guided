@@ -1,13 +1,13 @@
 const router = require('express').Router()
 
-router.verb('/register', async (req, res, next) => {
+router.post('/register', async (req, res, next) => {
   console.log('endpoint register wired!')
 })
-router.verb('/login', async (req, res, next) => {
-  console.log('endpoint wired!')
+router.post('/login', async (req, res, next) => {
+  console.log('endpoint login wired!')
 })
-router.verb('/logout', async (req, res, next) => {
-  console.log('endpoint wired!')
+router.get('/logout', async (req, res, next) => {
+  console.log('endpoint logout wired!')
 })
 
 module.exports = router
