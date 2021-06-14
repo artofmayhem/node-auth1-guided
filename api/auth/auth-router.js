@@ -35,7 +35,9 @@ router.post('/login', async (req, res, next) => {
   }
 })
 router.get('/logout', async (req, res, next) => {
-  res.json('endpoint logout wired!')
+  if (req.session.user) {
+
+  }
 })
 router.use((err, req, res, next) => { // eslint-disable-line
   res.status(err.status || 500).json({
