@@ -18,7 +18,7 @@ server.use(session({
     httpOnly: false, // if true, cookie not in document
   },
   resave: false, // required by some session stores
-  saveUninitialized: true // session not saved unless 
+  saveUninitialized: true // session not saved automatically
 }));
 server.use(helmet());
 server.use(express.json());
