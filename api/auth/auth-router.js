@@ -22,8 +22,8 @@ router.post('/login', async (req, res, next) => {
     const { username, password } = req.body
     const [user] = await User.findBy({ username })
     // does username correspont to an actual user?
-    if (user && ) {
-
+    if (user && bcrypt.compareSync(password, user.password)) {
+      
     } else {
       next({ status: 401, message: 'invalid credentials' })
     }
