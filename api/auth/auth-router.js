@@ -20,9 +20,13 @@ router.post('/register', async (req, res, next) => {
 router.post('/login', async (req, res, next) => {
   try {
     const { username, password } = req.body
-    // does username correspont to an actual user?
     const [user] = await User.findBy({ username })
-    res.json(userDb)
+    // does username correspont to an actual user?
+    if (user) {
+
+    } else {
+      
+    }
   } catch (err) {
     next(err)
   }
