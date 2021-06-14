@@ -1,1 +1,3 @@
-function restrict(req, )
+function restrict(req, res, next) {
+  
+}
