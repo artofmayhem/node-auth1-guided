@@ -10,7 +10,9 @@ router.post('/register', async (req, res, next) => {
       8, // number of rounds of hashing 2 ^ 8
     )
     const newUser = { username, password: hash }
-    User.
+    const createdUser = await User.add(newUser)
+
+    res.json(createdUser)
   } catch (err) {
     next(err)
   }
