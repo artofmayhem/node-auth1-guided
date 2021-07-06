@@ -34,7 +34,7 @@ router.post('/login', async (req, res, next) => {
     next(err)
   }
 })
-router.get('/logout', async (req, res, next) => {
+router.get('/logout', async (req, res, next) => { //eslint-disable-line
   if (req.session.user) {
     req.session.destroy(err => {
       if (err) res.json({ message: 'you cannot leave' })
